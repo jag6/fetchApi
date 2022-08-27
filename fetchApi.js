@@ -19,27 +19,3 @@ const fetchNasa = () => {
         });
     }
 fetchNasa();
-
-const fetchWeather = () => {
-    const url = 'https://handlers.education.launchcode.org/static/weather.json';
-    const fetchJson = fetch(url);
-    fetchJson.then((response) => {
-        if(!response.ok) {
-            throw new Error(`${response.status}`);
-        }
-        return response.json();
-        }).then((json) => {
-            const div = document.getElementById('weather-conditions');
-            div.innerHTML = `
-                <ul>
-                    <li>Temperature: ${json.temp}</li>
-                    <li>Wind Speed: ${json.windSpeed}</li>
-                    <li>Status: ${json.status}</li>
-                    <li>Chance of Precipitation: ${json.chanceOfPrecipitation}</li>
-                </ul>
-            `;
-        }).catch((error) => {
-            console.error(`${error}`);
-        });
-    }
-fetchWeather();

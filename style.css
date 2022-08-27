@@ -1,0 +1,15 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1200px;
+}
