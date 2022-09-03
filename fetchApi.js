@@ -1,4 +1,4 @@
-const fetchNasa = () => {
+const fetchApi = () => {
     const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     const fetchJson = fetch(url);
     fetchJson.then((response) => {
@@ -18,4 +18,4 @@ const fetchNasa = () => {
             console.error(`${error}`);
         });
     }
-fetchNasa();
+fetchApi();
