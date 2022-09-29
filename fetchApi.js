@@ -1,7 +1,6 @@
 const fetchApi = () => {
     const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
-    const fetchJson = fetch(url);
-    fetchJson.then((response) => {
+    fetch(url).then((response) => {
         if(!response.ok) {
             throw new Error(`${response.status}`);
         }
