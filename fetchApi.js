@@ -7,7 +7,7 @@ const fetchApi = () => {
         return response.json();
         }).then((json) => {
             const div = document.getElementById('nasa-photo');
-            if(`${json.media_type} === image`) {
+            if(`${json.media_type}` === 'image') {
                 div.innerHTML = `
                     <img src="${json.url}" alt="${json.title}">
                     <h2>${json.title}</h2>
@@ -17,9 +17,9 @@ const fetchApi = () => {
             }else {
                 div.innerHTML = `
                     <video>
-                        <source src="https:${json.url}" type="video/mp4">
+                        <source src="${json.url}" type="video/mp4">
                     </video>
-                    <a href="https:${json.url}">Watch HERE</a>
+                    <a href="${json.url}">Watch HERE</a>
                     <h2>${json.title}</h2>
                     <small>${json.date}</small>
                     <p>${json.explanation}</p>
