@@ -1,4 +1,4 @@
-const fetchAsync = async () => {
+window.addEventListener('load', async () => {
     const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     try {
         const response = await fetch(url);
@@ -16,9 +16,7 @@ const fetchAsync = async () => {
             `;
         }else {
             div.innerHTML = `
-                <video>
-                    <source src="${json.url}" type="video/mp4">
-                </video>
+                <iframe src="${json.url}"></iframe>
                 <a href="${json.url}">Watch HERE</a>
                 <h2>${json.title}</h2>
                 <small>${json.date}</small>
@@ -28,5 +26,4 @@ const fetchAsync = async () => {
     }catch (error) {
         console.error(`${error}`);
     }
-}
-fetchAsync();
+});

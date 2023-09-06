@@ -14,7 +14,7 @@ main {
     max-width: 1200px;
 }
 
-img, video {
+img, iframe {
     width: 100%;
     max-width: auto;
     height: auto;

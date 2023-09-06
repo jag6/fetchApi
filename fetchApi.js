@@ -1,4 +1,4 @@
-const fetchApi = () => {
+window.addEventListener('load', () => {
     const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     fetch(url).then((response) => {
         if(!response.ok) {
@@ -16,9 +16,7 @@ const fetchApi = () => {
                 `;
             }else {
                 div.innerHTML = `
-                    <video>
-                        <source src="${json.url}" type="video/mp4">
-                    </video>
+                    <iframe src="${json.url}"></iframe>
                     <a href="${json.url}">Watch HERE</a>
                     <h2>${json.title}</h2>
                     <small>${json.date}</small>
@@ -28,5 +26,4 @@ const fetchApi = () => {
         }).catch((error) => {
             console.error(`${error}`);
         });
-    }
-fetchApi();
+    });

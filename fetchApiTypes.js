@@ -1,5 +1,5 @@
 //Synchronous
-const fetchSync = () => {
+window.addEventListener('load', () => {
     const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     fetch(url).then((response) => {
         if(!response.ok) {
@@ -11,11 +11,10 @@ const fetchSync = () => {
         }).catch((error) => {
             console.error(`${error}`);
         });
-    }   
-fetchSync();
+    });
 
 //Asynchronous
-const fetchAsync = async () => {
+window.addEventListener('load', async () => {
     const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     try {
         const response = await fetch(url);
@@ -27,5 +26,4 @@ const fetchAsync = async () => {
     catch(error) {
         console.error(`${error}`);
     }
-}
-fetchAsync();
+});
